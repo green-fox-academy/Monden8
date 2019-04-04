@@ -32,4 +32,22 @@ console.log("My favorite number is: " + faveoriteNumber);
 
             console.log(myage +" "+ myname +" "+ myheight +" "+ AmIMarried);
 
-            
+                    let q:number = 3;
+                    q += 10;
+                    console.log(q)
+                    let w:number = 100;
+                    w -= 7;
+                    console.log(w)
+                    let e:number = 44;
+                    e *= 2;
+                    console.log(e)
+                    let r:number = 125;
+                    r /= 5;
+                    console.log(r)
+                    let t:number = 8; 
+                    t **= 2;
+                    console.log(t)
+                    let f1:number = 123;
+                    let f2:number = 345;
+                    let isBigger:boolean =  f1 > f2;
+                    console.log(isBigger)
