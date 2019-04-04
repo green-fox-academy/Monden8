@@ -33,3 +33,4 @@
             numberpercentage =  Math.floor (numberpercentage)
             console.log(numberpercentage+ "% ")
 
+                
