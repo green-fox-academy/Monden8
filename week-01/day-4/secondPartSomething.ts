@@ -22,6 +22,14 @@ console.log("My favorite number is: " + faveoriteNumber);
         let massInKg:number = 80.5;
         let heightInM:number = 1.89;
         let BMI:number = massInKg/(heightInM**2);
-        BMI = Number(BMI.toFixed(2));
+        BMI = Number(BMI.toFixed(2));   
+        console.log(BMI);
 
-        console.log(BMI)
+            let myage:number = 19;
+            let myname:string = "Soma";
+            let myheight:number = 189;
+            let AmIMarried:boolean = false;
+
+            console.log(myage +" "+ myname +" "+ myheight +" "+ AmIMarried);
+
+            
