@@ -18,9 +18,12 @@ for(let start:number =1; start<=10; start++ ){
      = ${c}`);
    // console.log(start + "*" +number + "=" + c);
 }
-const d:number=15
-for(let d:number = 56; d>=1; d--){
-    let h:number=d+d;
-    let j:number=6;
-    console.log(`"Sum: "${h} "Average: "${j}` )
-}  
+let e:number=5;
+let r:number=0;
+let s:number=undefined
+for(let d:number =1; d<=e; d++){
+    (r+=d);
+    (s=r/d);
+}
+console.log(`Sum:${r}
+Average:${s}` )
