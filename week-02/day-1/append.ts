@@ -22,3 +22,13 @@ function sum(given:number){
     }console.log(c);
 }
 sum(11)
+
+    // -  Create a function called `factorio`
+//    that returns it's input's factorial
+let b:number =1;
+function factorio(num:number){
+    for ( let i:number=1;i<=num; i++){
+        b = b*i
+    }console.log(b)
+}
+factorio(3)
