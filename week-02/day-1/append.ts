@@ -32,3 +32,28 @@ function factorio(num:number){
     }console.log(b)
 }
 factorio(3)
+
+    // -  Create a function called `printParams`
+//    which logs to the console the input parameters
+//    (can have multiple number of arguments)
+let d=[12,43,23,12,45];
+function printParams(d){
+    d.forEach(element => {console.log(element)
+})}
+printParams(d)
+
+function printParamss():void{
+    for ( let i:number=1;i<=printParams.length; i++){
+        console.log(printParamss)
+    }
+}       
+function countPrintParams():void{
+    
+}
+
+function idk(...argument:number[]):void{
+argument.forEach(element => {console.log(element)
+});
+}
+
+idk(234,234,234456,46,)
