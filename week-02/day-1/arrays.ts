@@ -1,4 +1,7 @@
 'use strict'
+let xxx=require('readline-sync');
+
+
 
 let x:number = 123;
 var a:number= undefined;
@@ -8,14 +11,15 @@ function doubling(x:number,y:number){
 console.log(doubling (123,2));
 console.log (a);
 
+function tehusername(mikulas:string){
+    let toDo:string=xxx.question("Mi a neved?");
+    console.log(mikulas)
+}
 
     let idfc:string= "Miért";
-    function greetByNames(greeet = "Hi" , names = 'Pal') {
-        console.log(greeet, names);
+    function greetByNames(greeet:string) {
+        console.log(greeet);
       }
-      
-      greetByNames(idfc ,"Soma");
-      greetByNames('Greetings, Dear', 'Greenfox');
 
       function makeGreen(name: string): string {
         let newName = 'Green ' + name;
@@ -23,4 +27,7 @@ console.log (a);
       }
       
       let names = makeGreen('Soma');
-      greetByNames('Mizujs?', names);
+
+      greetByNames(tehusername());
+      
+      
