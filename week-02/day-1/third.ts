@@ -55,3 +55,42 @@ let newestnumList=numList.map (function(x,index,alma){
 })
 console.log(newestnumList[3])
 
+// -  Create a variable named `numList` with the following content: `[1, 2, 3, 4, 5]`
+// -  Increment the third element simply by accessing it
+// -  Log the third element to the console
+let numList2=[1,2,3,4,5,]
+let newestnumList2=numList2.map (function(x,index2){
+    if (index2===2) {
+        x++
+        return x;
+    }else{
+        return x;
+    }
+})
+console.log(newestnumList2[2])
+
+// -  Create an array variable named `animals`
+//    with the following content: `["koal", "pand", "zebr"]`
+// -  Add all elements an `"a"` at the end
+
+let animals=["koal","pand","zebr"]
+function appendAFunc(animals){
+    animals.forEach(element => {console.log(element+"a")})
+    return animals
+}
+appendAFunc(animals)
+
+// -  Create an array variable named `drinks` with the following content: `['Gin', 'Whiskey', 'Wine', 'Beer']`
+// -  Double all the strings in the array, use a built in array method instead of a loop
+// It should print: ['GinGin', 'WhiskeyWhiskey', 'WineWine', 'BeerBeer']`
+
+let drinksy=['Gin', 'Whiskey', 'Wine', 'Beer']
+function appendAFunca(drinks){
+    let krumpli=drinks.map(element => {
+        return element+element
+    })
+    console.log(krumpli)
+    return krumpli
+}
+
+appendAFunca(drinksy)
