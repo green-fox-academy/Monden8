@@ -24,8 +24,28 @@ console.log(colors[2]);
 
 let ai: number[]=[3,4,5,6,7];
 let q:number=0;
-console.log(q);
 for(let i:number=0;i<ai.length;i++){
 q += ai[i];
 }
 console.log(q);
+
+// -  Create (dynamically*) a two dimensional list
+//    with the following matrix**. Use a loop!
+//
+//    0 0 0 1
+//    0 0 1 0
+//    0 1 0 0
+//    1 0 0 0
+//
+// -  Print this two dimensional list to the console
+//
+// * size should depend on a variable
+// ** Relax, a matrix is just like an array
+
+let xy=[0,0,0,0]
+for(let w:number=xy.length;w<=0;w--){
+if(xy[w]){
+}}
+
+
+    
