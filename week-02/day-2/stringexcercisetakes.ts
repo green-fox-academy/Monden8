@@ -13,3 +13,24 @@ console.log(quote);
 
 quote.replace('It', 'It always takes longer than');
 console.log(quote);
+
+// Add "My todo:" to the beginning of the todoText
+// Add " - Download games" to the end of the todoText
+// Add " - Diablo" to the end of the todoText but with indention
+
+// Expected outpt:
+
+// My todo:
+//  - Buy milk
+//  - Download games
+//      - Diablo
+
+let todoText: string = ' - Buy milk\n';
+let tombtodo:any=todoText.split("");
+console.log(tombtodo);
+tombtodo.splice(0,0,"My todo:\n");
+tombtodo.splice((todoText.indexOf("milk")+5),0,"\n - Dowload games\n\t-Diablo")
+console.log(tombtodo);
+todoText=tombtodo.join("")
+console.log(todoText);
+
