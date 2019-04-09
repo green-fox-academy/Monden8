@@ -22,10 +22,10 @@ console.log(colors[2]);
 // -  Create a variable named `ai` with the following content: `[3, 4, 5, 6, 7]`
 // -  Log the sum of the elements in `ai` to the console
 
-let ai: number[]=[3,4,5,6,7];
-let q:number=0;
-for(let i:number=0;i<ai.length;i++){
-q += ai[i];
+let ai: number[] = [3, 4, 5, 6, 7];
+let q: number = 0;
+for (let i: number = 0; i < ai.length; i++) {
+    q += ai[i];
 }
 console.log(q);
 
@@ -42,10 +42,21 @@ console.log(q);
 // * size should depend on a variable
 // ** Relax, a matrix is just like an array
 
-let xy=[0,0,0,0]
-for(let w:number=xy.length;w<=0;w--){
-if(xy[w]){
-}}
+function createMatrix(size: number): void {
+    const matrix: number[][] = [];
 
+    for (let i: number = 0; i < size; i++) {
+        matrix[i] = [];
 
-    
+        for (let j: number = 0; j < size; j++) {
+            if (j === size - i - 1) {
+                matrix[i][j] = 1;
+            } else {
+                matrix[i][j] = 0;
+            }
+        }
+        console.log(matrix[i])
+    }
+}
+
+createMatrix(4);
