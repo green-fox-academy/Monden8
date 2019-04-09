@@ -18,7 +18,7 @@ console.log(examp);
 let reversed: string = `.eslaf eb t'ndluow ecnetnes siht ,dehctiws erew eslaf dna eurt fo sgninaem eht fI`;
 console.log(reversed);
 
-function reverse(wtf) {
+function reverse(wtf:any) {
     return wtf.split('').reverse().join('');
 }
 
@@ -32,7 +32,7 @@ console.log(reversed);
 let url: string = 'https//www.reddit.com/r/nevertellmethebots';
 let urlll:string= " asdfasdfabotsadsfasdf"
 
-function fixx(idk){
+function fixx(idk:string){
     return idk.replace("bots","odds").replace("https//","https://")
 }
 console.log(fixx(url));
