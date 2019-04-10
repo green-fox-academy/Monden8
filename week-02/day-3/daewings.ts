@@ -101,7 +101,9 @@ for(let i:number=-3;i<0;i++){
 };
 */
 function namostujra(meret: number) {
-    let colorarrayforthewin: string[] = ["purple", "green", "red", "brown","ghostwhite","lightskyblue","lightcyan","palegreen"]
+    let colorarrayforthewin: string[] = ["purple", "green", "red", "brown","ghostwhite","lightskyblue","lightcyan",
+    "palegreen","red","green","yellow","blue","magenta","white","gray","red","green",
+    "yellow","blue","magenta","white","gray","ghostwhite","lightskyblue","lightcyan"]
     for (let i: number = 0; i < colorarrayforthewin.length; i++) {
         let color: string = colorarrayforthewin[i]
         ctx.fillStyle = color;
@@ -109,12 +111,50 @@ function namostujra(meret: number) {
         let center: number = 400-(meret/2);
         ctx.fillRect(center, center, meret, meret)
         center-=400+(meret/2)
-        meret-=50
+        meret-=30
     }
 };
-namostujra(600)
+/*namostujra(800)*/
 
 // Create a square drawing function that takes 2 parameters:
 // The square size, and the fill color,
 // and draws a square of that size and color to the center of the canvas.
 // Create a loop that fills the canvas with rainbow colored squares.
+
+function megegyszer(meret: number,color:string,color1:string) {
+    for (let i: number = 2; i < 30; i++) {
+        if(i%2===0){
+            ctx.fillStyle = color
+        }else{
+            ctx.fillStyle = color1 
+        }
+        ctx.beginPath();
+        console.log(ctx.fillStyle)
+        let center: number = 400-(meret/2);
+        ctx.fillRect(center, center, meret, meret)
+        center-=400+(meret/2)
+        meret-=30      
+    }};
+
+    /*megegyszer(800,"green","blue",)*/
+
+
+    function mostmarutoljara (meret: number) {
+         for(let i: number = 1; i < 100; i++) {
+            if(meret>=20){
+                let rgb:string=`rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)}`;
+                ctx.fillStyle =rgb
+                ctx.beginPath();
+                console.log(((Math.random()+1)*1000))
+                let center: number = 400-(meret/2);
+                ctx.fillRect(center, center, meret, meret)
+                center-=400+(meret/2)
+                meret-=20
+            }
+        }};
+        
+
+    /*mostmarutoljara(800)*/    
+
+
+    
