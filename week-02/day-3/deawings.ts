@@ -2,6 +2,7 @@
 
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx:any = canvas.getContext('2d');
+export { }
 
 // DO NOT TOUCH THE CODE ABOVE THIS LINE
 
