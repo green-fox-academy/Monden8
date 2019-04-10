@@ -2,7 +2,7 @@
 
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx: any = canvas.getContext('2d');
-
+export{}
 
 // Create a line drawing function that takes 2 parameters:
 // The x and y coordinates of the line's starting point
