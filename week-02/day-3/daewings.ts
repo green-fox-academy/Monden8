@@ -145,7 +145,6 @@ function megegyszer(meret: number,color:string,color1:string) {
                 let rgb:string=`rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)}`;
                 ctx.fillStyle =rgb
                 ctx.beginPath();
-                console.log(((Math.random()+1)*1000))
                 let center: number = 400-(meret/2);
                 ctx.fillRect(center, center, meret, meret)
                 center-=400+(meret/2)
@@ -157,4 +156,14 @@ function megegyszer(meret: number,color:string,color1:string) {
     /*mostmarutoljara(800)*/    
 
 
+
+    function purpleSquares(squareSize:number){
+        for(let i: number = 0; i <=(800/squareSize); i++){
+
+            ctx.beginPath();
+            ctx.fillStyle ="purple";
+            ctx.fillRect(0+(squareSize*i),0+(squareSize*i),squareSize,squareSize) ;
+        }
+    };
+    purpleSquares(20);
     
