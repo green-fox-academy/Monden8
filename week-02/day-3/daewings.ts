@@ -136,7 +136,7 @@ function megegyszer(meret: number,color:string,color1:string) {
         meret-=30      
     }};
 
-    /*megegyszer(800,"green","blue",)*/
+    //megegyszer(800,"green","blue",)
 
 
     function mostmarutoljara (meret: number) {
@@ -165,5 +165,19 @@ function megegyszer(meret: number,color:string,color1:string) {
             ctx.fillRect(0+(squareSize*i),0+(squareSize*i),squareSize,squareSize) ;
         }
     };
-    purpleSquares(20);
-    
+    //purpleSquares(20);
+
+    function limeSquares(squareSize:number){
+        let index:number=0;
+        let size:number=squareSize;
+        let arany:number=1.2;
+        for(let i: number = 0; i <=(800/squareSize); i++){
+            ctx.beginPath();
+            ctx.fillStyle ="lime";
+            ctx.fillRect(0+index,0+index,size,size);
+            index+=size;
+            size=size*arany;
+        }
+
+    };
+    /*limeSquares(4)*/
