@@ -44,9 +44,9 @@ lineDrawingy(40,50)*/
 
 // Draw a green 10x10 square to the center of the canvas.
 
-ctx.beginPath();
+/*ctx.beginPath();
 ctx.fillStyle = 'green';
-ctx.fillRect(395, 395, 10, 10);
+ctx.fillRect(395, 395, 10, 10);*/
 
 // Draw four different size and color rectangles.
 // Avoid code duplication.
@@ -101,17 +101,17 @@ for(let i:number=-3;i<0;i++){
 };
 */
 function namostujra(meret: number) {
-    let colorarrayforthewin: string[] = ["purple", "green", "red", "brown","ghostwhite","lightskyblue","lightcyan",
-    "palegreen","red","green","yellow","blue","magenta","white","gray","red","green",
-    "yellow","blue","magenta","white","gray","ghostwhite","lightskyblue","lightcyan"]
+    let colorarrayforthewin: string[] = ["purple", "green", "red", "brown", "ghostwhite", "lightskyblue", "lightcyan",
+        "palegreen", "red", "green", "yellow", "blue", "magenta", "white", "gray", "red", "green",
+        "yellow", "blue", "magenta", "white", "gray", "ghostwhite", "lightskyblue", "lightcyan"]
     for (let i: number = 0; i < colorarrayforthewin.length; i++) {
         let color: string = colorarrayforthewin[i]
         ctx.fillStyle = color;
         ctx.beginPath();
-        let center: number = 400-(meret/2);
+        let center: number = 400 - (meret / 2);
         ctx.fillRect(center, center, meret, meret)
-        center-=400+(meret/2)
-        meret-=30
+        center -= 400 + (meret / 2)
+        meret -= 30
     }
 };
 /*namostujra(800)*/
@@ -121,63 +121,97 @@ function namostujra(meret: number) {
 // and draws a square of that size and color to the center of the canvas.
 // Create a loop that fills the canvas with rainbow colored squares.
 
-function megegyszer(meret: number,color:string,color1:string) {
+function megegyszer(meret: number, color: string, color1: string) {
     for (let i: number = 2; i < 30; i++) {
-        if(i%2===0){
+        if (i % 2 === 0) {
             ctx.fillStyle = color
-        }else{
-            ctx.fillStyle = color1 
+        } else {
+            ctx.fillStyle = color1
         }
         ctx.beginPath();
         console.log(ctx.fillStyle)
-        let center: number = 400-(meret/2);
+        let center: number = 400 - (meret / 2);
         ctx.fillRect(center, center, meret, meret)
-        center-=400+(meret/2)
-        meret-=30      
-    }};
+        center -= 400 + (meret / 2)
+        meret -= 30
+    }
+};
 
-    //megegyszer(800,"green","blue",)
+//megegyszer(800,"green","blue",)
 
 
-    function mostmarutoljara (meret: number) {
-         for(let i: number = 1; i < 100; i++) {
-            if(meret>=20){
-                let rgb:string=`rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)}`;
-                ctx.fillStyle =rgb
+function mostmarutoljara(meret: number) {
+    for (let i: number = 1; i < 100; i++) {
+        if (meret >= 20) {
+            let rgb: string = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)}`;
+            ctx.fillStyle = rgb
+            ctx.beginPath();
+            let center: number = 400 - (meret / 2);
+            ctx.fillRect(center, center, meret, meret)
+            center -= 400 + (meret / 2)
+            meret -= 20
+        }
+    }
+};
+
+
+/*mostmarutoljara(800)*/
+
+
+
+function purpleSquares(squareSize: number) {
+    for (let i: number = 0; i <= (800 / squareSize); i++) {
+
+        ctx.beginPath();
+        ctx.fillStyle = "purple";
+        ctx.fillRect(0 + (squareSize * i), 0 + (squareSize * i), squareSize, squareSize);
+    }
+};
+//purpleSquares(20);
+
+function limeSquares(squareSize: number) {
+    let index: number = 0;
+    let size: number = squareSize;
+    let arany: number = 1.2;
+    for (let i: number = 0; i <= (800 / squareSize); i++) {
+        ctx.beginPath();
+        ctx.fillStyle = "lime";
+        ctx.fillRect(0 + index, 0 + index, size, size);
+        index += size;
+        size = size * arany;
+    }
+
+};
+/*limeSquares(4)*/
+
+// Fill the canvas with a checkerboard pattern.
+
+function chechkerboard(squareSize: number) {
+    let index: number = 0;
+    let size: number = squareSize;
+    let arany: number = 1.2;
+    let forciklus: number = 800 / squareSize;
+    if (squareSize % 2 === 0) {
+        for (let j = 0; j <= forciklus; j += 2) {
+            index = 0
+            for (let i: number = 0; i < (800 / squareSize); i++) {
                 ctx.beginPath();
-                let center: number = 400-(meret/2);
-                ctx.fillRect(center, center, meret, meret)
-                center-=400+(meret/2)
-                meret-=20
+                ctx.fillStyle = "black";
+                ctx.fillRect(0 + index + (squareSize * j), 0 + index, size, size);
+                index += size;
+                console.log("2nd for " + index);
             }
-        }};
-        
-
-    /*mostmarutoljara(800)*/    
-
-
-
-    function purpleSquares(squareSize:number){
-        for(let i: number = 0; i <=(800/squareSize); i++){
-
-            ctx.beginPath();
-            ctx.fillStyle ="purple";
-            ctx.fillRect(0+(squareSize*i),0+(squareSize*i),squareSize,squareSize) ;
+            index = 0
+            for (let i: number = 0; i < (800 / squareSize); i++) {
+                ctx.beginPath();
+                ctx.fillStyle = "black";
+                ctx.fillRect(0 + index, 0 + index + (squareSize * j), size, size);
+                index += size;
+                console.log("2nd for " + index);
+            }
         }
-    };
-    //purpleSquares(20);
-
-    function limeSquares(squareSize:number){
-        let index:number=0;
-        let size:number=squareSize;
-        let arany:number=1.2;
-        for(let i: number = 0; i <=(800/squareSize); i++){
-            ctx.beginPath();
-            ctx.fillStyle ="lime";
-            ctx.fillRect(0+index,0+index,size,size);
-            index+=size;
-            size=size*arany;
-        }
-
-    };
-    /*limeSquares(4)*/
+    }else {
+        console.log("The given number isn't divisor of the Canvas(800)")
+    }
+};
+chechkerboard(160);
