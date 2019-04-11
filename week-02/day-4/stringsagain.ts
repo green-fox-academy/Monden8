@@ -15,3 +15,7 @@ function givenAString(given: string): string {
     return givenAString(given)
   };
   console.log(givenAString(arandomstring))
+
+  // Given a string, compute recursively a new string where all the adjacent chars are now separated by a *
+
+export{}
