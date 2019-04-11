@@ -23,8 +23,38 @@ function sumdigit(num:number):number{
 console.log(sumdigit(126))
 
 
+//Given base and n that are both 1 or more, compute recursively (no loops) the value of base to the n power,
+// so powerN(3, 2) is 9 (3 squared).
 
+function squared(base:number,power:number):number{
+    if (base<=0||power<=0){
+    return 0;
+    }return base**power;
+};
 
+console.log(squared(3,6))
+
+//
+
+function squaredrecurs(base:number,power:number):number{
+    if (power==0){
+    return 1;
+    }return base*squaredrecurs(base,power-1);
+};
+
+console.log(squaredrecurs(3,3))
+
+//
+
+//Find the greatest common divisor of two numbers using recursion.
+let gcd=0;
+function divisor(num1:number,num2:number):number{
+if (num1%num2===0){
+    return gcd
+}return gcd=num1/divisor(num1,num2-1)
+};
+
+console.log(divisor(8,12)) //4
 
 
 
