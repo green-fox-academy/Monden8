@@ -13,3 +13,16 @@ function imNotCreativeEnoughForNamingThisManyFunctions(bunnies: number): number 
 };
 
 console.log(imNotCreativeEnoughForNamingThisManyFunctions(6))
+
+// Given a string, compute recursively (no loops) a new string 
+// where all the lowercase 'x' chars have been changed to 'y' chars.
+
+/*function givenAString(given:string):string{
+    if array doesnt have x in it{}
+
+this is a string
+i wanna split up the string to arrays
+i wanna change up the x y 
+i wanna jointhem together to a string 
+
+};*/
