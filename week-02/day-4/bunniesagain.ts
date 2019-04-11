@@ -65,3 +65,5 @@ function findsLargestElement(arandomarray: number[]): number {
     } return findsLargestElement(arandomarray)
 };
 console.log(findsLargestElement(myArray))
+
+export{}
