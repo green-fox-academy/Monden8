@@ -11,12 +11,22 @@ function arecursion(n: number): number {
 console.log(arecursion(6))
 
 //  Given a non-negative int n, return the sum of its digits recursively (no loops). 
-//  Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6), while divide (/) 
+//  Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6)
+//levágok, while divide (/) 
 //  by 10 removes the rightmost digit (126 / 10 is 12).
 
 function sumdigit(num:number):number{
-    let object ={num}
-    if (n <=0){
+    if (num<1){
         return 0
-    }return 
+        }return num%10+Math.floor(sumdigit(num/10))
 };
+console.log(sumdigit(126))
+
+
+
+
+
+
+
+
+
