@@ -2,11 +2,12 @@
 
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx: any = canvas.getContext('2d');
-
+//850-600
+export{}
 function draw(startX: number, startY: number, len: number, angle: number, branchWidth: number) {
     ctx.beginPath();
     ctx.save();
-
+    
     ctx.strokeStyle = "#874312";
     ctx.lineWidth = branchWidth;
     ctx.translate(startX, startY);
