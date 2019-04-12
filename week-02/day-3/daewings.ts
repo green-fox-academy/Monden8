@@ -2,7 +2,7 @@
 
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx: any = canvas.getContext('2d');
-export{}
+
 
 // Create a line drawing function that takes 2 parameters:
 // The x and y coordinates of the line's starting point
@@ -114,7 +114,7 @@ function namostujra(meret: number) {
         meret -= 30
     }
 };
-/*namostujra(800)*/
+//namostujra(800)
 
 // Create a square drawing function that takes 2 parameters:
 // The square size, and the fill color,
@@ -155,7 +155,7 @@ function mostmarutoljara(meret: number) {
 };
 
 
-/*mostmarutoljara(800)*/
+//mostmarutoljara(800)
 
 
 
@@ -167,7 +167,7 @@ function purpleSquares(squareSize: number) {
         ctx.fillRect(0 + (squareSize * i), 0 + (squareSize * i), squareSize, squareSize);
     }
 };
-//purpleSquares(20);
+//purpleSquares(160);
 
 function limeSquares(squareSize: number) {
     let index: number = 0;
@@ -182,14 +182,13 @@ function limeSquares(squareSize: number) {
     }
 
 };
-/*limeSquares(4)*/
+//limeSquares(1)
 
 // Fill the canvas with a checkerboard pattern.
 
 function chechkerboard(squareSize: number) {
     let index: number = 0;
     let size: number = squareSize;
-    let arany: number = 1.2;
     let forciklus: number = 800 / squareSize;
     if (squareSize % 2 === 0) {
         for (let j = 0; j <= forciklus; j += 2) {
@@ -214,4 +213,4 @@ function chechkerboard(squareSize: number) {
         console.log("The given number isn't divisor of the Canvas(800)")
     }
 };
-chechkerboard(160);
+//chechkerboard(160);

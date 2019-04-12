@@ -2,7 +2,7 @@
 
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx: any = canvas.getContext('2d');
-
+export{}
 
 function drawYesterday(x:number,y:number,num:number) {
     if(num<=1){
