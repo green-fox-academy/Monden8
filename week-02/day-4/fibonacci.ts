@@ -7,15 +7,19 @@
 //Define a recursive fibonacci(n) method that returns the nth fibonacci number, with n=0 representing the start of the sequence.
 
 //  0, 1, 1, 2, 3, 5, 8, 13, 21
-let basic: number = 99
-function fibonacci(hanyadik: number):number {
-    if (hanyadik*****) {
-        return hanyadik
-    }hanyadik+=hanyadik
-    return fibonacci(hanyadik + 1)
+let valtozo:number=0;
+
+function fibonacci(hanyadik: number): number {
+    if (hanyadik == 2) {
+        //FIXME//return 1
+    } else if (hanyadik == 1) {
+        return 1
+    } else if (hanyadik <= 0) {
+        return 1
+    } return fibonacci(hanyadik - 2) + fibonacci(hanyadik - 3)
 };
 
-console.log(fibonacci(basic))
+console.log(fibonacci(5))
 
 
 
