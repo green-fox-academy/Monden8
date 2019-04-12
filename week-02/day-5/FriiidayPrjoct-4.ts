@@ -2,7 +2,7 @@
 
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx: any = canvas.getContext('2d');
-
+export{}
 
 function sierPinskyCarpet(startX: number, startY: number, startSize: number) {
     ctx.beginPath();
