@@ -2,6 +2,7 @@
 
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx: any = canvas.getContext('2d');
+export{}
 
 
 // Create a line drawing function that takes 2 parameters:
@@ -167,12 +168,12 @@ function purpleSquares(squareSize: number) {
         ctx.fillRect(0 + (squareSize * i), 0 + (squareSize * i), squareSize, squareSize);
     }
 };
-//purpleSquares(160);
+//purpleSquares(210);
 
 function limeSquares(squareSize: number) {
     let index: number = 0;
     let size: number = squareSize;
-    let arany: number = 1.2;
+    let arany: number = 1.1;
     for (let i: number = 0; i <= (800 / squareSize); i++) {
         ctx.beginPath();
         ctx.fillStyle = "lime";
@@ -213,4 +214,4 @@ function chechkerboard(squareSize: number) {
         console.log("The given number isn't divisor of the Canvas(800)")
     }
 };
-//chechkerboard(160);
+//chechkerboard(8);
