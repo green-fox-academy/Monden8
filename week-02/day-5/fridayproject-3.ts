@@ -4,7 +4,7 @@ const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx: any = canvas.getContext('2d');
 //850-600
 export{}
-function draw(startX: number, startY: number, len: number, angle: number, branchWidth: number) {
+function draw(startX: number, startY: number, bLength: number, angle: number, branchWidth: number) {
     ctx.beginPath();
     ctx.save();
     
@@ -13,18 +13,18 @@ function draw(startX: number, startY: number, len: number, angle: number, branch
     ctx.translate(startX, startY);
     ctx.rotate(angle * Math.PI / 180);
     ctx.moveTo(0, 0);
-    ctx.lineTo(0, -len);
+    ctx.lineTo(0, -bLength);
     ctx.stroke();
 
-    if (len < 5) {
+    if (bLength < 5) {
         ctx.restore();
         ctx.fillStyle = "lawngreen";
-        ctx.arc(0, -len, 2, 0, Math.PI / 2);
+        ctx.arc(0, -bLength, 2, 0, Math.PI / 2);
         ctx.fill();
         return;
     }
-    draw(0, -len, len * 0.8, -30, branchWidth * 0.75);
-    draw(0, -len, len * 0.8, 30, branchWidth * 0.75);
+    draw(0, -bLength, bLength * 0.8, -30, branchWidth * 0.75);
+    draw(0, -bLength, bLength * 0.8, 30, branchWidth * 0.75);
 
     ctx.restore();
 }
