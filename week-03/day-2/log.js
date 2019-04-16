@@ -13,9 +13,9 @@ function returnsArray(bigstring) {
     for (let i = 0; i < barack.length; i++) {
         hagyma.push(barack[i].slice(27, 38))
     }
-    let unique = [new Set(hagyma)]
-    console.log(unique)
-
+    let unique = new Set(hagyma);
+    var myArr = Array.from(unique);
+    console.log(myArr)
 };
 returnsArray(alldata);
 
