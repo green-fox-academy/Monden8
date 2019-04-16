@@ -7,6 +7,7 @@ const fs = require('fs')
 
 let alldata = fs.readFileSync('log.txt', 'utf8')
 let hagyma = [];
+let alma = [];
 
 function returnsArray(bigstring) {
     let barack = bigstring.split('\n')
@@ -17,28 +18,24 @@ function returnsArray(bigstring) {
     var myArr = Array.from(unique);
     console.log(myArr)
 };
-returnsArray(alldata);
+//returnsArray(alldata);
 
+function GETPOST(bigstring) {
+    let barack = bigstring.split('\n')
 
+    for (let i = 0; i < barack.length; i++) {
+        hagyma.push(barack[i].slice(41, 45))
+    }
 
-
-/*removeDups(hagyma)
-
-function removeDups(names) {
-    let unique = [];
-    names.forEach(function(i) {
-      if(!unique[i]) {
-        unique[i] = true;
-      }
-    })
-    console.log(unique)
-
-
-
-
-
-
-    const result = (hagyma) => hagyma.filter((v,i) =>hagyma.indexOf(v)===i)
-    words.filter(word => word.length > 6);
-
-*/
+    for (var i = 0; i < 500 ; i++) {
+        if (hagyma[i] === 'POST') {
+            alma.push(hagyma.splice(i, 1));
+            i--
+        } else if (hagyma.indexOf('POST')===-1){
+            i=500
+        }
+    }
+    let POST=alma.length
+    console.log(`${500-alma.length} elements contain GET while ${POST} contain POST`)
+};
+GETPOST(alldata)
