@@ -2,7 +2,7 @@
 
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx: any = canvas.getContext('2d');
-
+export{}
 
 function draw(startX: number, startY: number, bLength: number, angle: number, branchWidth: number) {
     ctx.beginPath();

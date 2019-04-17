@@ -2,7 +2,7 @@
 
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx: any = canvas.getContext('2d');
-export{}
+
 
 
 // Create a line drawing function that takes 2 parameters:
@@ -156,7 +156,7 @@ function mostmarutoljara(meret: number) {
 };
 
 
-//mostmarutoljara(800)
+mostmarutoljara(800)
 
 
 
@@ -214,4 +214,4 @@ function chechkerboard(squareSize: number) {
         console.log("The given number isn't divisor of the Canvas(800)")
     }
 };
-//chechkerboard(8);
+//chechkerboard(1);
