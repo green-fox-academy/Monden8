@@ -14,10 +14,10 @@
 //   Person(name, age, gender)
 //   Person(): sets name to Jane Doe, age to 30, gender to female
 
-class Person {
-    pName: string = '';
-    pAge: number = 0;
-    pGender: string = '';
+export class Person {
+    pName: string;
+    pAge: number;
+    pGender: string;
 
     constructor(name: string = 'Jane Doe', age: number = 30, gender: string = 'female') {
         this.pName = name;
