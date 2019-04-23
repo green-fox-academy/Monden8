@@ -13,6 +13,6 @@ export class Treee {
         this.color = color;
     }
     watering(amountOfWater: number) {
-        return this.waterAmount + (amountOfWater * 0.4)
+        return this.waterAmount += (amountOfWater * 0.4)
     }
 }

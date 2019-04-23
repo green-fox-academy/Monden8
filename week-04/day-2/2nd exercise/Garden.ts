@@ -29,8 +29,7 @@ class Garden {
         });
 
         this.flowers.forEach(element => {
-            element.watering(sumAmountOfWater / (this.trees.length + this.flowers.length))
-
+            element.watering(sumAmountOfWater / (this.trees.length + this.flowers.length))  
         });
     }
 }
@@ -47,5 +46,5 @@ garden.addT(tree2)
 
 
 garden.wateringGarden(40)
-console.log(garden)
+
 
