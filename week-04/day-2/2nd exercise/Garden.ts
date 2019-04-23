@@ -23,14 +23,14 @@ class Garden {
     }
     wateringGarden(sumAmountOfWater: number) {
 
+        this.flowers.forEach(element => {
+            element.watering(sumAmountOfWater / (this.trees.length + this.flowers.length))
+        });
 
         this.trees.forEach(element => {
             element.watering(sumAmountOfWater / (this.trees.length + this.flowers.length))
         });
-
-        this.flowers.forEach(element => {
-            element.watering(sumAmountOfWater / (this.trees.length + this.flowers.length))  
-        });
+        
     }
 }
 
@@ -44,7 +44,6 @@ garden.addF(flower2)
 garden.addT(tree1)
 garden.addT(tree2)
 
-
-garden.wateringGarden(40)
-
-
+//----------------garden.wateringGarden(0)
+//----------------garden.wateringGarden(40)
+//----------------garden.wateringGarden(70)

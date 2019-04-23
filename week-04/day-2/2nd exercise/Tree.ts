@@ -13,6 +13,13 @@ export class Treee {
         this.color = color;
     }
     watering(amountOfWater: number) {
-        return this.waterAmount += (amountOfWater * 0.4)
+        if (this.waterAmount < 10) {
+            this.waterAmount += (amountOfWater * 0.4)
+        }
+        if (this.waterAmount < 10) {
+            console.log(`The ${this.color} ${this.type} needs water`)
+        } else {
+            console.log(`The ${this.color} ${this.type} doesn't need water`)
+        }
     }
-}
+};

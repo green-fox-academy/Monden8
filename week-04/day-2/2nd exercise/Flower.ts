@@ -13,6 +13,13 @@ export class Flower {
         this.color = color;
     }
     watering(amountOfWater: number) {
-        return this.waterAmount += (amountOfWater * 0.75)
+        if (this.waterAmount < 5) {
+            this.waterAmount += (amountOfWater * 0.75)
+        }
+        if (this.waterAmount < 5) {
+            console.log(`The ${this.color} ${this.type} needs water`)
+        } else {
+            console.log(`The ${this.color} ${this.type} doesn't need water`)
+        }
     }
-}
+};
