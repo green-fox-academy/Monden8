@@ -1,4 +1,5 @@
 'use strict';
+import { Person } from './Person'
 
 //   Create a Sponsor class that has the same fields and methods as the Person class, and has the following additional
 //   
@@ -13,3 +14,26 @@
 //   
 //   Sponsor(name, age, gender, company): beside the given parameters, it sets hiredStudents to 0
 //   Sponsor(): sets name to Jane Doe, age to 30, gender to female, company to Google and hiredStudents to 0
+
+class Sponsor extends Person {
+    company: string;
+    hiredStudents: number;
+
+    constructor(name: string = 'Jane Doe', age: number = 30, gender: string = 'female',
+        company: string = 'Google', hiredStudents: number = 0) {
+        super(name, age, gender);
+        this.company=company;
+        this.hiredStudents=hiredStudents;
+    }
+
+    introduce() {
+        console.log(`Hi, I'm ${this.pName}, a ${this.pAge} year old ${this.pGender} who represents ${this.company}
+     and hired ${this.hiredStudents} students so far.`)
+    }
+    hire() {
+        this.hiredStudents++
+    }
+    getGoal() {
+        console.log('My goal is: Hire brilliant junior software developers.')
+    }
+}
