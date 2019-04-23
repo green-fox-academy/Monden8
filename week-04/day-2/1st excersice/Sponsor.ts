@@ -15,7 +15,7 @@ import { Person } from './Person'
 //   Sponsor(name, age, gender, company): beside the given parameters, it sets hiredStudents to 0
 //   Sponsor(): sets name to Jane Doe, age to 30, gender to female, company to Google and hiredStudents to 0
 
-class Sponsor extends Person {
+export class Sponsor extends Person {
     company: string;
     hiredStudents: number;
 

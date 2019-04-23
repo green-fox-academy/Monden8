@@ -13,7 +13,7 @@ import { Person } from './Person'
 //   Mentor(name, age, gender, level)
 //   Mentor(): sets name to Jane Doe, age to 30, gender to female, level to intermediate
 
-class Mentor extends Person {
+export class Mentor extends Person {
 
     level: string;
 
