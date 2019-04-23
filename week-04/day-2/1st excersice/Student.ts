@@ -14,15 +14,15 @@ import { Person } from './Person'
 //   Student(name, age, gender, previousOrganization): beside the given parameters, it sets skippedDays to 0
 //   Student(): sets name to Jane Doe, age to 30, gender to female, previousOrganization to The School of Life, skippedDays to 0
 
-class Student extends Person {
+export class Student extends Person {
 
     previousOrganization: string = '';
     skippedDays: number = 0;
 
     constructor(name: string = 'Jane Doe', age: number = 30, gender: string = 'female',
-    previousOrganization: string='The school of life') {
-        super(name,age,gender);
-        this.previousOrganization=previousOrganization;
+        previousOrganization: string = 'The school of life') {
+        super(name, age, gender);
+        this.previousOrganization = previousOrganization;
         this.skippedDays = 0;
     }
 
