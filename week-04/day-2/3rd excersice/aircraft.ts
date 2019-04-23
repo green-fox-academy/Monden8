@@ -1,6 +1,8 @@
 'use strict';
 
-class Aircrafts {
+import { Carrier } from "./carrier";
+
+export class Aircrafts {
     ammunition: number = 0;
     maxAmmo: number;
     baseDamage: number;
@@ -16,13 +18,13 @@ class Aircrafts {
         this.ammunition = 0;
         return this.dmgDealt
     }
-    refill(supplyBox: number) {
+    refill(carrier: Carrier) {
         for (let i: number = 0; i < this.maxAmmo; i++) {
-            if (supplyBox !== 0) {
+            if (carrier.supplyboxOfCarrier !== 0) {
                 this.ammunition++
-                supplyBox--
+                carrier.supplyboxOfCarrier--
             }
-        } return supplyBox;
+        } return carrier.supplyboxOfCarrier;
     }
     getType() {
         return this.type;
@@ -34,16 +36,5 @@ class Aircrafts {
         if (this.getType() == 'F16') {
             return false
         } return true
-    }
-}
-
-class F16 extends Aircrafts {
-    constructor() {
-        super(8, 30, 'F16');
-    }
-}
-class F35 extends Aircrafts {
-    constructor() {
-        super(12, 50, 'F35');
     }
 };
