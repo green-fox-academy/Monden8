@@ -12,15 +12,40 @@ class Garden {
     trees: Treee[];
     constructor(GardenName: string) {
         this.gName = GardenName
+        this.flowers = [];
+        this.trees = [];
     }
-    watering(amountOfWater) {
+    addT(tree: Treee) {
+        this.trees.push(tree)
+    }
+    addF(flower: Flower) {
+        this.flowers.push(flower)
+    }
+    wateringGarden(sumAmountOfWater: number) {
 
 
-        this.trees.forEach(element => {this.watering(amountOfWater/(this.trees.length+this.flowers.length))
+        this.trees.forEach(element => {
+            element.watering(sumAmountOfWater / (this.trees.length + this.flowers.length))
         });
 
-        this.flowers.forEach(element => {this.watering(amountOfWater/(this.trees.length+this.flowers.length))
+        this.flowers.forEach(element => {
+            element.watering(sumAmountOfWater / (this.trees.length + this.flowers.length))
 
         });
     }
 }
+
+let garden: Garden = new Garden('Simi Soma kertje')
+let flower1: Flower = new Flower('yellow')
+let flower2: Flower = new Flower('blue')
+let tree1: Treee = new Treee('orange')
+let tree2: Treee = new Treee('purple')
+garden.addF(flower1)
+garden.addF(flower2)
+garden.addT(tree1)
+garden.addT(tree2)
+
+
+garden.wateringGarden(40)
+console.log(garden)
+

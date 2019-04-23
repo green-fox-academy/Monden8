@@ -13,6 +13,6 @@ export class Flower {
         this.color = color;
     }
     watering(amountOfWater: number) {
-        this.waterAmount + (amountOfWater * 0.75)
+        return this.waterAmount + (amountOfWater * 0.75)
     }
 }
