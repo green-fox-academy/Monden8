@@ -5,11 +5,16 @@ export class GreenLeaf {
     waterAmount: number = 0;
     dyingPlant:number;
     absorption:number;
-    constructor(color: string, type: string) {
+    constructor(color: string, type: string,absortion:number,dyingPlant:number) {
         this.color = color;
         this.type = type;
-        this.absorption=0;
-        this.dyingPlant=0;
+        this.absorption=absortion;
+        this.dyingPlant=dyingPlant;
+    }
+    isDying(){
+        if (this.waterAmount < this.dyingPlant){
+            return true
+        } return false
     }
     watering(amountOfWater: number) {
         if (this.waterAmount < this.dyingPlant) {

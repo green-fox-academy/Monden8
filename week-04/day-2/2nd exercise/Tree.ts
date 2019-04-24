@@ -10,8 +10,6 @@ import { GreenLeaf } from "./green";
 export class Treee extends GreenLeaf {
 
     constructor(color: string) {
-        super(color, 'Tree');
-        this.absorption=0.4;
-        this.dyingPlant=10;
+        super(color, 'Tree',0.4,10);
     }
 };

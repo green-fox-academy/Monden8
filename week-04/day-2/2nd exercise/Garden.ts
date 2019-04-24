@@ -1,6 +1,7 @@
 'use strict';
 import { Treee } from './Tree'
 import { Flower } from './Flower'
+import { GreenLeaf } from './green';
 //     The Garden
 //     is able to hold unlimited amount of flowers or trees
 //     when watering it should only water those what needs water with equally divided amount amongst them
@@ -8,42 +9,36 @@ import { Flower } from './Flower'
 
 class Garden {
     gName: string;
-    flowers: Flower[];
-    trees: Treee[];
+    greenleaves: GreenLeaf[];
+    thirstyflowers: GreenLeaf[];
     constructor(GardenName: string) {
-        this.gName = GardenName
-        this.flowers = [];
-        this.trees = [];
+        this.gName = GardenName;
+        this.greenleaves = [];
+        this.thirstyflowers = [];
     }
-    addT(tree: Treee) {
-        this.trees.push(tree)
-    }
-    addF(flower: Flower) {
-        this.flowers.push(flower)
+    addGP(jani: GreenLeaf) {
+        this.greenleaves.push(jani)
     }
     wateringGarden(sumAmountOfWater: number) {
-
-        this.flowers.forEach(element => {
-            element.watering(sumAmountOfWater / (this.trees.length + this.flowers.length))
-        });
-
-        this.trees.forEach(element => {
-            element.watering(sumAmountOfWater / (this.trees.length + this.flowers.length))
-        });
-        
+        for (let i: number = 0; i < this.greenleaves.length; i++) {
+            if (this.greenleaves[i].isDying()) {
+                this.thirstyflowers.push(this.greenleaves[i])
+            }
+        }
+            this.thirstyflowers.forEach(element => {
+                element.watering(sumAmountOfWater / this.thirstyflowers.length)
+            });
+        this.thirstyflowers=[]
     }
 }
 
 let garden: Garden = new Garden('Simi Soma kertje')
-let flower1: Flower = new Flower('yellow')
-let flower2: Flower = new Flower('blue')
-let tree1: Treee = new Treee('orange')
-let tree2: Treee = new Treee('purple')
-garden.addF(flower1)
-garden.addF(flower2)
-garden.addT(tree1)
-garden.addT(tree2)
-
+let flower1: GreenLeaf = new Flower('yellow')
+let flower2: GreenLeaf = new Flower('blue')
+let tree1: GreenLeaf = new Treee('orange')
+let tree2: GreenLeaf = new Treee('purple')
+garden.addGP(flower1)
+garden.addGP(flower2)
+garden.addGP(tree1)
+garden.addGP(tree2)
 garden.wateringGarden(0)
-garden.wateringGarden(40)
-garden.wateringGarden(70)
