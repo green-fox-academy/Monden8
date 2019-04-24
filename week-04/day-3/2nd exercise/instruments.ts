@@ -1,33 +1,41 @@
 'use strict';
 ///    We start with a base, abstract class Instrument.
 abstract class Instrument{
-    protected nameOfTheInsturment:string='';
-    numberOfstrings:number=0;
-    instrumentSound:string='';
-    play(){
-        console.log(`${this.nameOfTheInsturment}, a ${this.numberOfstrings}-stringed instrument that goes ${this.instrumentSound}`)
-    }
+    abstract nameOfTheInsturment:string='';
+    abstract play():void
 }
 abstract class StringedInstrument extends Instrument{
-    numberOfstrings:number=0;
-    sound(){
-
-    }
+    abstract numberOfstrings:number=0;
+    abstract sound():void
 }
 class ElectricGuitar extends StringedInstrument{
     nameOfTheInsturment:string='ElectricGuitar';
     instrumentSound:string='Twang';
+    numberOfstrings:number;
+    play(){
+        console.log(`${this.nameOfTheInsturment}, a ${this.numberOfstrings}-stringed instrument that goes ${this.sound()}`)
+    }
+    sound(){
+        return this.instrumentSound
+    }
     constructor(strings:number=6){
         super()
         this.numberOfstrings=strings
     }
 }
 class BassGuitar extends StringedInstrument{
+    numberOfstrings:number;
     nameOfTheInsturment:string='BassGuitar';
     instrumentSound:string='Duum-duum-duum';
     constructor(strings:number=4){
         super()
         this.numberOfstrings=strings
+    }
+    play(){
+        console.log(`${this.nameOfTheInsturment}, a ${this.numberOfstrings}-stringed instrument that goes ${this.sound()}`)
+    }
+    sound(){
+        return this.instrumentSound
     }
 }
 class Violin extends StringedInstrument{
@@ -36,6 +44,12 @@ class Violin extends StringedInstrument{
     instrumentSound:string='Screech';
     constructor(){
         super()
+    }
+    play(){
+        console.log(`${this.nameOfTheInsturment}, a ${this.numberOfstrings}-stringed instrument that goes ${this.sound()}`)
+    }
+    sound(){
+        return this.instrumentSound
     }
 }
 
