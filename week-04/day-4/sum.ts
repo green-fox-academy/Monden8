@@ -6,6 +6,7 @@ export class NindzsaAdder {
 
     returnValue: number = 0;
     sumOfElements() {
+        this.returnValue=0;
         for (let i: number = 0; i < this.listOfInteger.length; i++) {
             this.returnValue += this.listOfInteger[i]
         } return this.returnValue
