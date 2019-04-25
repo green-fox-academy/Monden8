@@ -11,15 +11,15 @@ let valtozo:number=0;
 
 function fibonacci(hanyadik: number): number {
     if (hanyadik == 2) {
-        //FIXME//return 1
+        return 1
     } else if (hanyadik == 1) {
         return 1
-    } else if (hanyadik <= 0) {
-        return 1
-    } return fibonacci(hanyadik - 2) + fibonacci(hanyadik - 3)
+    } else if (hanyadik == 0) {
+        return 0
+    } return fibonacci(hanyadik - 1) + fibonacci(hanyadik - 2)
 };
 
-console.log(fibonacci(5))
+console.log(fibonacci(1))
 
 
 
