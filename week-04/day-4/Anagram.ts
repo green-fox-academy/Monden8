@@ -18,4 +18,4 @@ let Anagramma = function (stringby: string, stringy: string): boolean {
         } return false
     } return false
 };
-console.log(Anagramma('aAAaB', 'aaaab'));
+export{Anagramma}
