@@ -2,12 +2,7 @@
 
 import { Test } from 'tape';
 var test = require('tape');
-
-class Apple {
-    getApple() {
-        return 'apple'
-    };
-};
+import {Apple} from './apple'
 
 let alma: Apple = new Apple();
 
