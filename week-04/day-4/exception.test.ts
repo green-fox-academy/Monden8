@@ -35,22 +35,22 @@ test('median: five', function (t: any): any {
 });
 
 test('is vowel: a', function (t: any): any {
-  t.ok(isVowel('a'));
+  t.equal(isVowel('a'),true);
   t.end();
 });
 
 test('is vowel: u', function (t: any): any {
-  t.ok(isVowel('u'));
+  t.equal(isVowel('u'),true);
   t.end();
 });
 
 test('is vowel: k', function(t: any): any {
-  t.notOk(isVowel('k'));
+  t.equal(isVowel('k'),false);
   t.end();
 });
 
 test('translate: bemutatkozik', function (t: any): any {
-  t.equal(translate('bemutatkozik'), 'bevemuvutavatkovozivik');
+  t.equal(translate('bmabaaabo'), 'bmavabavavabovo');
   t.end();
 });
 
