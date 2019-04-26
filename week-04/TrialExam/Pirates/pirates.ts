@@ -1,10 +1,3 @@
-//    Write a program which can store pirates in a ship.
-//    
-//    ### Pirate
-//     
-//     - A pirate has a name, an amount of gold and health points, the default value of which is 10.
-//     - A pirate might be a captain and may have a wooden leg.
-//     - You must create the following methods:
 abstract class Pirate {
     pName: string = 'Jack';
     pGold: number = 20;
@@ -21,65 +14,75 @@ abstract class Pirate {
         }
     }
 }
+
 class Captain extends Pirate {
     isCaptain: boolean = true;
     constructor(hasWleg: boolean = false) {
         super();
-        this.woodenLeg = hasWleg
+        this.woodenLeg = hasWleg;
     }
     work(): number {
-        this.pGold += 10
-        this.pHealthPoints -= 5
-        return 0
+        this.pGold += 10;
+        this.pHealthPoints -= 5;
+        return 0;
     }
     party(): number {
-        return this.pHealthPoints += 10
-    }
-}
-class Normal extends Pirate {
-    constructor(hasWleg: boolean = false) {
-        super();
-        this.woodenLeg = hasWleg
-    }
-    work(): number {
-        this.pGold += 1
-        this.pHealthPoints -= 1
-        return 0
-    }
-    party(): number {
-        return this.pHealthPoints += 1
+        return this.pHealthPoints += 10;
     }
 }
 
-//    ### Ship
+class Normal extends Pirate {
+    constructor(hasWleg: boolean = false) {
+        super();
+        this.woodenLeg = hasWleg;
+    }
+    work(): number {
+        this.pGold += 1;
+        this.pHealthPoints -= 1;
+        return 0;
+    }
+    party(): number {
+        return this.pHealthPoints += 1;
+    }
+}
+
 class Ship {
     listOfPirates: Pirate[] = [];
     add(pirateName: Pirate) {
         for (let i: number = 0; i < this.listOfPirates.length; i++) {
             if (pirateName.isCaptain == true && this.listOfPirates[i].isCaptain == true) {
-                console.log('This ship already has a Captain Aye!')
+                console.log('This ship already has a Captain Aye!');
             } else {
-                this.listOfPirates.push(pirateName)
+                this.listOfPirates.push(pirateName);
             }
         }
-    }
-    getPoorPirates() {
+    };
+    getPoorPirates(): Array<Pirate> {
         let poorPirates: Pirate[] = [];
         for (let i: number = 0; i < this.listOfPirates.length; i++) {
             if (this.listOfPirates[i].woodenLeg == true && this.listOfPirates[i].pGold < 15) {
-                poorPirates = poorPirates.concat(this.listOfPirates[i])
+                poorPirates = poorPirates.concat(this.listOfPirates[i]);
             }
-        }
-    }
-    getGolds() {
+        } return poorPirates;
+    };
+    getGolds(): number {
         let sumOfGold: number = 0;
         for (let i: number = 0; i < this.listOfPirates.length; i++) {
             sumOfGold += this.listOfPirates[i].pGold;
+        } return sumOfGold;
+    };
+    lastDayOnTheShip() {
+        for (let i: number = 0; i < this.listOfPirates.length; i++) {
+            this.listOfPirates[i].party();
         }
-    }
-}
-//     - `getGolds()` which returns the sum of gold owned by the pirates of that particular ship
-//     - `lastDayOnTheShip()` which calls the pirates' `party()` method.
-//     - `prepareForBattle()` which calls 
-//        - the pirates' `work()` method 5 times
-//        - then the ship's `lastDayOnTheShip()` method.
+    };
+    prepareForBattle() {
+        for (let j: number = 0; j < 5; j++) {
+            for (let i: number = 0; i < this.listOfPirates.length; i++) {
+                this.listOfPirates[i].work();
+            }
+        } for (let i: number = 0; i < this.listOfPirates.length; i++) {
+            this.lastDayOnTheShip();
+        }
+    };
+};
