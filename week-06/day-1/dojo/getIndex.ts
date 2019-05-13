@@ -6,9 +6,6 @@ export let getIndex = function (array: string[], value: string): number[] {
         if (array[i] == value) {
             multipleIndexArray.push(i)
         }
-    }; if (multipleIndexArray.length > 0) {
-        return multipleIndexArray
-    } else {
-        return [-1]
-    }
+    };
+    return multipleIndexArray.length ? multipleIndexArray : [-1];
 };
