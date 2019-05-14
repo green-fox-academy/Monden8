@@ -1,16 +1,33 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Line in the middle</title>
     <link rel="stylesheet" href="./thirdTask.css">
-  </head>
-  <body>
-    <ul class="container">
-        <li class="item"></li>
-        <li class="item"></li>
-        <li class="item"></li>
-        <li class="item"></li>
-      </ul>
-  </body>
+</head>
+
+<body>
+    The layout should be centered on the page.
+    <div class="layout">
+        The layout should have fixed width.
+        <div class="header">
+            <ul class="nav">
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+            </ul>
+        </div>
+        <div class="main-content">
+        </div>
+        <div class=" sidebar">
+        </div>
+    </div>
+    When picking the semantically correct element, consider the roles of the boxes:
+    Purple: Header
+    Cyan: Navigation links
+    Yellow: Main Content
+    Green: Sidebar (not main content)
+</body>
+
 </html>
