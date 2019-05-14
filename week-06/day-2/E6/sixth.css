@@ -2,5 +2,65 @@ body{
     margin:0px;   
 }
 .layout{
+    margin: 0 5vw;
     width:90vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.topbar{
+    width: 100%;
+    height: 12%;
+    background-color: palevioletred;
+    display: flex;
+    justify-content: space-between;
+}
+.leftboxes{
+    display: flex;
+    justify-content: flex-start;
+}
+.rightboxes{
+    display: flex;
+    justify-content: flex-end;
+}
+.bluebox{
+    margin: 30px 30px;
+    background-color: blue;
+    width: 50px;
+    height: 20px;
+}
+.midbar{
+    width: 100%;
+    height: 88%;
+    display: flex;
+    flex-direction: row;
+}
+.yellow{
+    height: 100%;
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+    background-color: burlywood;
+}
+.green{
+    height: 100%;
+    flex-grow:1;
+    flex-direction: column;
+    background-color: aqua;
+}
+.redboxes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+.redboxestwo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.purple{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
 }
