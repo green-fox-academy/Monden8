@@ -1,0 +1,24 @@
+body{
+    margin: 0px;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    justify-content: space-between;
+}
+.item{
+    height: 100%;
+}
+.green{
+    flex-grow: 1;
+    background-color: green;
+}
+.yellow{
+    flex-grow: 2;
+    background-color:yellow;
+}
+.purple{
+    flex-grow: 1;
+    background-color:purple;
+}
