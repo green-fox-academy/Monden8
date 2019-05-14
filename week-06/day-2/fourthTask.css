@@ -1,0 +1,28 @@
+body{
+}
+.layout{
+    margin:5vh;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    width: 100%;
+    flex-grow: 5;
+    display: flex;
+    background-color: aquamarine;
+}
+.main-body{
+    width: 100%;
+    flex-grow: 95;
+    display: flex;
+    flex-direction: row;
+}
+.main-content{
+    flex-grow: 65;
+    background-color: yellow;
+}
+.side-bar{
+    flex-grow:35;
+    background-color: greenyellow;
+}
