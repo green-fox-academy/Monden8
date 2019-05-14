@@ -6,10 +6,7 @@ body{
     height: 100vh;
     display:flex;
     justify-content: space-between;
-    flex-direction: row-reverse;
-}
-.item{
-    height: 100%;
+    flex-direction: column;
 }
 .green{
     flex-grow: 1;
@@ -18,6 +15,7 @@ body{
 .yellow{
     flex-grow: 2;
     background-color:yellow;
+    order:3;
 }
 .purple{
     flex-grow: 1;
