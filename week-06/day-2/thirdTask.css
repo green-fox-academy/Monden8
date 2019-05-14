@@ -9,10 +9,10 @@ body{
     background-color: yellow;
     display:flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .item{
+    margin-right: 10px;
     height: 100px;
     width: 100px;
     padding: 0px;
