@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 const gfa = document.createElement('li');
 gfa.appendChild(document.createTextNode('The Green Fox'));
 const ul = document.getElementsByClassName("asteroids");
@@ -17,27 +18,24 @@ lul[0].appendChild(hihi);
 const pic = document.createElement('img');
 lul[0].appendChild(pic);
 document.querySelectorAll('img')[0].src = "https://static.wixstatic.com/media/f4461b_83457ca5dd844c71a760d36e6583d0ff.png/v1/fill/w_168,h_168,al_c,usm_0.66_1.00_0.01/f4461b_83457ca5dd844c71a760d36e6583d0ff.png";
+*/
 
-/*
-//BREAKS THE WEBPAGE FOR UNKNOWN REASONS ----------------------->
+
 
 let atrilist = ['li', 'li', 'h1', 'img'];
 let taglist = ['asteroids', 'asteroids', 'container', 'container'];
-let list = ['The Green Fox', 'The Lamplighter', 'I can add elements to the DOM!', '<img src="https://static.wixstatic.com/media/f4461b_83457ca5dd844c71a760d36e6583d0ff.png/v1/fill/w_168,h_168,al_c,usm_0.66_1.00_0.01/f4461b_83457ca5dd844c71a760d36e6583d0ff.png"></img>'];
+let list = ['The Green Fox', 'The Lamplighter', 'I can add elements to the DOM!', "https://static.wixstatic.com/media/f4461b_83457ca5dd844c71a760d36e6583d0ff.png/v1/fill/w_168,h_168,al_c,usm_0.66_1.00_0.01/f4461b_83457ca5dd844c71a760d36e6583d0ff.png"];
 for (let j = 0; j < taglist.length; j++) {
     if (j < 2) {
         document.getElementsByClassName(taglist[j])[0].appendChild(document.createElement(atrilist[j]));
         document.querySelectorAll(atrilist[j])[2 + j].innerText = list[j];
     }
-    else if (j = 2) {
+    else if (j === 2) {
         document.getElementsByClassName(taglist[j])[0].appendChild(document.createElement(atrilist[j]));
         document.querySelectorAll(atrilist[j])[0].innerText = list[j];
     }
-    else if (j = 3) {
+    else if (j === 3) {
         document.getElementsByClassName(taglist[j])[0].appendChild(document.createElement(atrilist[j]));
         document.querySelectorAll(atrilist[j])[0].src = list[j];
-    }//else {return}
+    }
 };
-
-//BREAKS THE WEBPAGE FOR UNKNOWN REASONS ----------------------->
-*/
