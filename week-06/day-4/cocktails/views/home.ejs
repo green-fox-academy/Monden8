@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <h1><%= title %></h1>
+    <table>
+        <% for(let i=0; i<alcoholLista.length; i++){%>
+        <a href="localhost:3000/?"><%= alcoholLista[i] %></a>
+        <%}%>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <% for(let i=0; i<lista.length; i++){%>
+        <td><%= lista[i].name %>
+            <% if(lista[i].isAlcoholic == false){%>
+            (non alcoholic)
+            <%}%>
+            <p><%= lista[i].contains %></p>
+        </td>
+        <td><%= lista[i].price %></td>
+        </tr>
+        <%}%>
+    </table>
+</body>
+
+</html>
