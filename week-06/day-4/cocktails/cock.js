@@ -11,20 +11,32 @@ const cocktails = [
     { name: 'VIRGIN MOJITO', price: 990, contains: ['sugar', 'lime juice', 'soda water'], isAlcoholic: false },
     { name: 'SAFE SEX ON THE BEACH', price: 990, contains: ['peach schnapps', 'orange juice', 'cranberry juice'], isAlcoholic: false },
 ];
-const alcoholicList = ['ALL','GIN', 'VODKA', 'RUM', 'TEQUILA'];
+const alcoholList = ['all','gin', 'vodka', 'rum', 'tequila'];
 
-app.use(express.static(__dirname+ '/static'));
+toUpper = function(x){ 
+    return x.toUpperCase();
+};
+let alcoholListiii = alcoholList.map(toUpper);
 
-app.set('view engine', 'ejs');
+/*filter = function(x,y){
+    for (let i = 0; i < y.length; i++) {
+        if(x[i].contains.map.has(y)){
+            x.splice(i,1)
+        }return x
+    }
+}
+filter(cocktails,alcoholList)*/
+  app.use(express.static(__dirname+ '/static'));
+  
+  app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
     res.render('home', {
         title: 'Cocktails',
-        alcoholLista: alcoholicList,
+        alcoholLista: alcoholListiii,
         lista: cocktails
     });
 });
 
-// start express app on port 3000
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 });
