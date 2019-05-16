@@ -9,9 +9,10 @@
 <body>
     <h1><%= title %></h1>
     <ul>
-        <li><%= content %></li>
-        <li><%= content %></li>
-        <li><%= content %></li>
+        <% for(let i=0; i<lista.length; i++){%>
+        <li><%= lista[i] %></li>
+        <%}%>
+        
     </ul>
 </body>
 
