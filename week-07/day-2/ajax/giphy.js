@@ -1,5 +1,6 @@
 // var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=trending&api_key=SfQrNulcOykTmtxwa5b70YSpBJxW95yC&limit=5");
 // xhr.done(function (data) { console.log("success got data", data); });
+'use strict';
 
 const xhr = new XMLHttpRequest();
 xhr.open('GET', 'http://api.giphy.com/v1/gifs/search?q=trending&api_key=SfQrNulcOykTmtxwa5b70YSpBJxW95yC&limit=16');
