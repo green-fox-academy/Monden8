@@ -10,24 +10,23 @@ xhr.onload = () => {
     let articlepic = [];
     let parsed = JSON.parse(xhr.responseText);
 
-    console.log(parsed);
-
-
     for (let i = 0; i < 10; i++) {
         headArticle.push(parsed.response.docs[i].headline.print_headline);
         mainArticle.push(parsed.response.docs[i].headline.main);
         articlepic.push(parsed.response.docs[i].web_url);
     }
+
     document.body.style.width = '100vw';
     document.body.style.height = '100vh';
+    document.body.style.alignContent='center';
 
     let div = document.querySelector('div');
     div.style.display = 'flex';
     div.style.width = '100vw';
     div.style.height = '100vh';
-    div.style.flex_directon = 'coloumn';
-    div.style.flex_display = 'justify-content';
-    div.style.flex_display = 'align-items';
+    div.style.flexDirecton = 'coloumn';
+    div.style.flexDisplay = 'justify-content';
+    div.style.flexDisplay = 'align-items';
 
     for (let i = 0; i < 10; i++) {
         let h1 = document.createElement('h1');
