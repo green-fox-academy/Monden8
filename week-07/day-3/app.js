@@ -2,7 +2,9 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const bodyParser = require('body-parser');
 
+app.use(bodyParser.json());
 app.use('/assets', express.static('assets'));
 app.set('port', 3000);
 app.get('/', (req, res) => {
@@ -59,33 +61,25 @@ app.get('/appenda/:text?', (req, res) => {
   }
 });
 //doUntil
-app.post('/dountil', (req, res) => {
-  let number = JSON.parse(req.query.number.until);
-  let sum = 0;
+app.post('/dountil/:action', (req, res) => {
+
   //sum
-  for (let i = 1; i <= number; i++) {
-    sum = + i
+  if (req.params.action === 'sum') {
+    let sum = 0;
+    for (let i = 0; i <= req.body.until; i++) {
+      sum += i
+    }
+    res.send({
+      "sum": sum
+    })
   }
-  //factor
-  let factor = 0;
-  for (let i = 1; i <= number; i--) {
-    factor = factor * i
-  }
-  if (number == undefined) {
-    res.send(JSON.stringify({
-      "error": "Please provide a number!"
-    }))
-  }
-  if (req.query.sum !== undefined) {
-    res.send(JSON.stringify({
-      "until": number,
-      "result": sum
-    }))
-  }
-  if (req.query.factor !== undefined) {
-    res.send(JSON.stringify({
-      "until": number,
-      "result": factor
-    }))
-  }
+  else if (req.params.action === 'factor') {
+    let factor = 1;
+    for (let i = req.body.until; i >= 1; i--) {
+      factor = factor * i
+    }
+    res.send({
+      "factor": factor
+    })
+  };
 });
