@@ -4,7 +4,6 @@ const express = require('express');
 const mysql = require('mysql');
 const app = express();
 require('dotenv').config();
-const book_mast = 'book_mast';
 const PORT = 3000;
 const path = require('path');
 
@@ -48,7 +47,21 @@ app.get('/', (req, res) => {
 });
 
 app.get('/allBooks', (req, res) => {
-  conn.query(`SELECT book_name FROM ${book_mast};`, (err, rows) => {
+  conn.query(`SELECT book_name FROM book_mast;`, (err, rows) => {
+    if (err) {
+      console.log(err.toString());
+      return;
+    }
+    console.log('data successfully requested from DB');
+    res.send(rows);
+  });
+});
+
+app.get('/allInfo', (req, res) => {
+  conn.query(`SELECT aut_name, book_name 
+  FROM book_mast
+  INNER JOIN author 
+  ON book_mast.aut_id = author.aut_id;`, (err, rows) => {
     if (err) {
       console.log(err.toString());
       return;
