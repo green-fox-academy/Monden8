@@ -36,15 +36,22 @@ app.get('/posts', (req, res) => {
 });
 
 app.post('/posts', (req, res) => {
-    conn.query(`INSERT INTO Reddit_Backend(title,url)
-    VALUES(${req.body.title},${req.body.url});`, (err, rows) => {
+    conn.query(`INSERT INTO Reddit_Backend(title,url) 
+    VALUES("${req.body.title}","${req.body.url}");`, (err) => {
             if (err) {
                 console.log(err.toString());
                 res.status(500);
                 return;
             }
             console.log('Dowloaded Matrix');
-            res.status(200).json(rows);
+            conn.query(`SELECT * FROM Reddit_Backend ORDER BY id DESC LIMIT 1;`), (err, rows) => {
+                if (err) {
+                    console.log(err.toString());
+                    res.status(500);
+                    return;
+                }
+                res.status(200).json(rows);
+            }
         });
 });
 
