@@ -1,6 +1,5 @@
 'use strict';
 
-
 require('dotenv').config();
 const exp = require('express');
 const mysql = require('mysql');
@@ -98,6 +97,48 @@ app.delete('/posts/:id', (req, res) => {
             res.status(200).json(deletedData);
         });
 });
+
+
+let doesITcontains;
+(con.query(`SELECT up_posts FROM Logged_User`, (err, rows) => {
+    if (err) {
+        console.log(err.toString());
+        res.status(500);
+        return;
+    } doesITcontains = rows;
+}));
+let postDOTid;
+(con.query(`SELECT id FROM Reddit_Backend`, (err, rows) => {
+    if (err) {
+        console.log(err.toString());
+        res.status(500);
+        return;
+    } postDOTid = rows;
+}));
+app.post('/posts/:id/upvote', (req, res) => {
+    if (doesITcontains !== postDOTid) {
+        con.query(`UPDATE Reddit_Backend
+        SET score = "${}"
+        WHERE id = ${req.params.id};`, (err) => {
+                if (err) {
+                    console.log(err.toString());
+                    res.status(500);
+                    return;
+                } else {
+                    res.status.status(200).json();
+                }
+            });
+        console.log('User already upvoted this post');
+        res.status(405).json();
+    });
+
+
+
+
+
+
+
+
 
 
 app.listen(PORT, () => {
