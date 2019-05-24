@@ -57,7 +57,7 @@ app.post('/posts', (req, res) => {
 
 app.put('/posts/:id', (req, res) => {
     con.query(`UPDATE Reddit_Backend
-        SET title = ${req.body.title}
+        SET title = "${req.body.title}"
         WHERE id = ${req.params.id};`, (err) => {
             if (err) {
                 console.log(err.toString());
