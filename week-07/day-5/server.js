@@ -77,7 +77,28 @@ app.put('/posts/:id', (req, res) => {
         });
 });
 
-//   app.delete()
+app.delete('/posts/:id', (req, res) => {
+    let deletedData;
+    con.query(`SELECT * FROM Reddit_Backend 
+            WHERE id = ${req.params.id};`, (err, rows) => {
+            if (err) {
+                console.log(err.toString());
+                res.status(500);
+                return;
+            }
+            deletedData = rows;
+        });
+    con.query(`DELETE FROM Reddit_Backend
+            WHERE id=${req.params.id};`, (err) => {
+            if (err) {
+                console.log(err.toString());
+                res.status(500);
+                return;
+            }
+            res.status(200).json(deletedData);
+        });
+});
+
 
 app.listen(PORT, () => {
     console.log(`Yo my n*gga I'm listenin' on ${PORT}. Wazzup dog ?`);
