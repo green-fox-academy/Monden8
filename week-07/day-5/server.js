@@ -36,7 +36,7 @@ app.get('/posts', (req, res) => {
 
 app.post('/posts', (req, res) => {
     con.query(`INSERT INTO Reddit_Backend(title,url) 
-    VALUES(?,?);`,[req.body.title,req.body.url], (err) => {
+    VALUES(?,?);`, [req.body.title, req.body.url], (err) => {
             if (err) {
                 console.log(err.toString());
                 res.status(500).send();
@@ -57,7 +57,7 @@ app.post('/posts', (req, res) => {
 app.put('/posts/:id', (req, res) => {
     con.query(`UPDATE Reddit_Backend
         SET title = ?,
-        WHERE id = ?;`[req.body.title,req.params.id], (err) => {
+        WHERE id = ?;`[req.body.title, req.params.id], (err) => {
             if (err) {
                 console.log(err.toString());
                 res.status(500).send();
@@ -100,13 +100,15 @@ app.delete('/posts/:id', (req, res) => {
 
 //variables
 let doesUPcontain;
-(con.query(`SELECT up_posts FROM Logged_User`, (err, rows) => {
-    if (err) {
-        console.log(err.toString());
-        res.status(500).send();
-        return;
-    } doesUPcontain = rows;
-}));
+let contain = function (upID) {
+    (con.query(`SELECT up_posts FROM Logged_User`, (err, rows) => {
+        if (err) {
+            console.log(err.toString());
+            res.status(500).send();
+            return;
+        } doesUPcontain = rows;
+    }));
+};
 let doesDOWNcontain;
 (con.query(`SELECT down_posts FROM Logged_User`, (err, rows) => {
     if (err) {
