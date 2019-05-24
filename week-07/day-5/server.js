@@ -123,9 +123,10 @@ let postDOTid;
         return;
     } postDOTid = rows;
 }));
+
 //counting variables
 let upVotes;
-(con.query(`SELECT upname_id FROM Reddit_Backend`, (err, rows) => {
+(con.query(`SELECT upname_id FROM Reddit_Backend WHERE id = `, (err, rows) => {
     if (err) {
         console.log(err.toString());
         res.status(500);
@@ -133,7 +134,7 @@ let upVotes;
     } upVotes = rows.split(',').length;
 }));
 let downVotes;
-(con.query(`SELECT downName_id FROM Reddit_Backend`, (err, rows) => {
+(con.query(`SELECT downName_id FROM Reddit_Backend WHERE id = `, (err, rows) => {
     if (err) {
         console.log(err.toString());
         res.status(500);
@@ -154,10 +155,31 @@ app.post('/posts/:id/upvote', (req, res) => {
                 } else {
                     res.status.status(200).json();
                 }
-            });
-        console.log('User already upvoted this post');
-        res.status(405).json();
-    });
+            }
+        )
+    };
+    console.log('User already upvoted this post');
+    res.status(405).json();
+});
+//downvote method
+app.post('/posts/:id/downvote', (req, res) => {
+    if (doesDOWNcontain !== postDOTid) {
+        con.query(`UPDATE Reddit_Backend
+        SET score = "${upVotes - downVotes}"
+        WHERE id = ${req.params.id};`, (err) => {
+                if (err) {
+                    console.log(err.toString());
+                    res.status(500);
+                    return;
+                } else {
+                    res.status.status(200).json();
+                }
+            }
+        )
+    };
+    console.log('User already upvoted this post');
+    res.status(405).json();
+});
 
 
 
