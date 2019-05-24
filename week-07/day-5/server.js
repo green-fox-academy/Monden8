@@ -98,14 +98,22 @@ app.delete('/posts/:id', (req, res) => {
         });
 });
 
-
-let doesITcontains;
+//variables
+let doesUPcontain;
 (con.query(`SELECT up_posts FROM Logged_User`, (err, rows) => {
     if (err) {
         console.log(err.toString());
         res.status(500);
         return;
-    } doesITcontains = rows;
+    } doesUPcontain = rows;
+}));
+let doesDOWNcontain;
+(con.query(`SELECT down_posts FROM Logged_User`, (err, rows) => {
+    if (err) {
+        console.log(err.toString());
+        res.status(500);
+        return;
+    } doesDOWNcontain = rows;
 }));
 let postDOTid;
 (con.query(`SELECT id FROM Reddit_Backend`, (err, rows) => {
@@ -115,10 +123,29 @@ let postDOTid;
         return;
     } postDOTid = rows;
 }));
+//counting variables
+let upVotes;
+(con.query(`SELECT upname_id FROM Reddit_Backend`, (err, rows) => {
+    if (err) {
+        console.log(err.toString());
+        res.status(500);
+        return;
+    } upVotes = rows.split(',').length;
+}));
+let downVotes;
+(con.query(`SELECT downName_id FROM Reddit_Backend`, (err, rows) => {
+    if (err) {
+        console.log(err.toString());
+        res.status(500);
+        return;
+    } downVotes = rows.split(',').length;
+}));
+
+//upvote method
 app.post('/posts/:id/upvote', (req, res) => {
-    if (doesITcontains !== postDOTid) {
+    if (doesUPcontain !== postDOTid) {
         con.query(`UPDATE Reddit_Backend
-        SET score = "${}"
+        SET score = "${upVotes - downVotes}"
         WHERE id = ${req.params.id};`, (err) => {
                 if (err) {
                     console.log(err.toString());
