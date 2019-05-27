@@ -1,17 +1,17 @@
 'use strict';
 
 class TennisGame {
-    players:string[]=[];
-    gameName:string;
-    score:number[] = [0, 0];
+    players: string[] = [];
+    gameName: string;
+    score: number[] = [0, 0];
     scoreName = ['-', 'All', 'Love', 'Fifteen', 'Thirty', 'Deuce', `Win for `, `Advantage `];
     scoreScreen = 'Love-All';
-    constructor(Challenger:string, Opponent:string, GameName:string) {
+    constructor(Challenger: string, Opponent: string, GameName: string) {
         this.players[0] = Challenger;
         this.players[1] = Opponent;
         this.gameName = GameName;
     };
-    scored(player:string) {
+    scored(player: string) {
         if (this.players[0] === player) {
             this.score[0] += 1;
         } else {
@@ -52,4 +52,13 @@ class TennisGame {
             }
         }
     }
+};
+let NormalGame: TennisGame;
+let createNewGame = function (Challenger: string, Opponent: string, GameName: string) {
+    NormalGame = new TennisGame(Challenger, Opponent, GameName);
+    //create table and two buttons with player names 
+};
+
+let scoring = function (name:string){
+    NormalGame.scored(name);
 };
