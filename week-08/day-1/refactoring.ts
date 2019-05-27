@@ -54,11 +54,16 @@ class TennisGame {
     }
 };
 let NormalGame: TennisGame;
+
+
 let createNewGame = function (Challenger: string, Opponent: string, GameName: string) {
     NormalGame = new TennisGame(Challenger, Opponent, GameName);
     //create table and two buttons with player names 
 };
 
-let scoring = function (name:string){
-    NormalGame.scored(name);
+let scoring = function (playerName:string){
+    NormalGame.scored(playerName);
 };
+
+let btn:any = document.getElementById("coolbutton");
+btn.addEventListener("click",createNewGame(XXX,XXX,XXX));
