@@ -28,26 +28,23 @@ let zoom = (inORout) => {
     document.querySelector('.img-inspector').style.backgroundSize = `${size}%`;
 };
 
-let positionLR=0;
-let positionUD=0;
+let positionLR = 0;
+let positionUD = 0;
 let move = (fourdimension) => {
     if (fourdimension === "up" || fourdimension === "down") {
         if (fourdimension === "up") {
-            positionUD+=10;
+            positionUD += 10;
         } else {
-            positionUD-=10;
+            positionUD -= 10;
         }
-        console.log(positionUD);
-        
-        document.querySelector('.img-inspector').style.top = positionUD;
+        document.querySelector('.img-inspector').style.backgroundPositionY = `${positionUD}px`;
     } else if (fourdimension === "left" || fourdimension === "right") {
         if (fourdimension === "right") {
-            positionLR+=10;
+            positionLR -= 10;
         } else {
-            positionLR-=10;
+            positionLR += 10;
         }
-        console.log(positionLR);
-        document.querySelector('.img-inspector').style.left = positionLR;
+        document.querySelector('.img-inspector').style.backgroundPositionX = `${positionLR}px`;
     }
 };
 
