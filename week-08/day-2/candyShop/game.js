@@ -27,6 +27,8 @@ setInterval(() => {
     document.querySelector('.candies').innerHTML = candies;
 }, 1000)
 
+
+
 // // If you press the "make candy rain" button, the candy generation should speed up 10x
 // let disable = ()=>{
 // buyLollipooop.disabled=true;
