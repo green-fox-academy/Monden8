@@ -1,6 +1,6 @@
 'use strict';
 
-let body = document.querySelector('.hapci');
+let firstDiv = document.querySelector('.kismacska');
 
 let random_bg_color = () => {
     var x = Math.floor(Math.random() * 256);
@@ -13,13 +13,15 @@ let random_bg_color = () => {
 for (let i = 0; i < 10; i++) {
     let div = document.createElement('div');
     div.style.backgroundColor = random_bg_color();
-    body.appendChild(div);
+    firstDiv.appendChild(div);
 };
 
-body.addEventListener('scroll', (event) => {
-    console.log('hapci');
-    const { scroolHeight, scroolTop, clientHeight } = event.element;
-    if (scroolHeight - scroolTop < clientHeight) {
+
+window.addEventListener('scroll', () => {
+    let body = document.querySelector('.kismacska')
+    const { scrollHeight, scrollTop, clientHeight } = body;
+
+    if (scrollTop+clientHeight>=scrollHeight) {
         for (let i = 0; i < 10; i++) {
             let div = document.createElement('div');
             div.style.backgroundColor = random_bg_color();
