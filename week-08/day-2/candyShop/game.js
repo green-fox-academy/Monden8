@@ -22,18 +22,28 @@ buyLollipooop.addEventListener('click', () => {
     }
 });
 
-setInterval(() => {
+let basic = setInterval(() => {
     let candies = parseInt(document.querySelector('.candies').innerHTML);
     candies += i
     document.querySelector('.candies').innerHTML = candies;
 }, 1000)
 
-// If you press the "make candy rain" button, the candy generation should speed up 10x
 
 document.querySelector('.candy-machine').addEventListener('click', () => {
+    document.querySelector('.candy-machine').disabled = true;
     let j = i * 10
     document.querySelector('.speed').innerHTML = j
-    setTimeout(()=>{
-    document.querySelector('.speed').innerHTML = i
-    },3000)
+
+    let interval = setInterval(() => {
+        let candies = parseInt(document.querySelector('.candies').innerHTML);
+        candies += i
+        document.querySelector('.candies').innerHTML = candies;
+    }, 100)
+
+    //clearInterval(basic);
+    setTimeout(() => {
+        document.querySelector('.candy-machine').disabled = false;
+        document.querySelector('.speed').innerHTML = i
+        clearInterval(interval);
+    }, 3000)
 });
