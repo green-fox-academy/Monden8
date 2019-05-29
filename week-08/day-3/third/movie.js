@@ -21,7 +21,7 @@ firstList.addEventListener(('change'), () => {
             optional.setAttribute('selected', 'true');
             optional.innerHTML = "Select your movie";
             secondList.appendChild(optional)
-            for (let j = 0; j < 3; j++) { //MAGIC NUMBER
+            for (let j = 0; j < movies[Object.keys(movies)[i]].length; j++) { //MAGIC NUMBER
                 let movie = document.createElement('option');
                 movie.setAttribute('value', `${movies[types[i]][j]}`);
                 movie.innerHTML = movies[types[i]][j];
