@@ -22,7 +22,6 @@ opacity: 1;
     margin-bottom: 20px;
 }
 button{
-    box-shadow :2px 5px 1px 1px rgba(0, 0, 255, .2);
     opacity: 0.8;
     border: none;
     margin-left: 10px;
@@ -32,9 +31,9 @@ button{
     text-decoration: none;
     color: white;
 }
-.blue{background-color: blue}
-.green{background-color:green}
-.red{background-color:red}
-.light{background-color:lightblue}
-.black{background-color:black}
-.white{background-color:white;color: black;}
+.blue{background-color: blue; box-shadow :2px 5px 1px 1px rgba(0, 0, 255, .5);}
+.green{background-color:green; box-shadow :2px 5px 1px 1px rgba(0, 128, 0, .5);}
+.red{background-color:red; box-shadow :2px 5px 1px 1px rgba(255, 0, 0, .5);}
+.light{background-color:rgb(173, 216, 230); box-shadow :2px 5px 1px 1px rgba(173, 216, 230, .5);}
+.black{background-color:black; box-shadow :2px 5px 1px 1px rgba(0, 0, 0, .5);}
+.white{background-color:white;color: black; box-shadow :2px 5px 1px 1px rgba(255, 255, 255, .5);}
