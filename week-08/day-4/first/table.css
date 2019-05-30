@@ -42,3 +42,8 @@ td{
 /* tr:nth-child(even),td:nth-child(even){
 padding-right: 20px;
 } */
+
+
+.data-currency::pseudo{
+first-element:`$`;
+}
