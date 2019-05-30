@@ -7,7 +7,7 @@ body{
     align-items: center;
     background-color: #313841;
 }
-div{
+.main{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,20 +28,45 @@ button{
 .tick:hover{
     background-color: #38BA7D;
 }
-
-button:hover {
-    padding: 20px;
-    width: 200px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
+.text{
+  width: 0px;
+  opacity: 0;
+  transition: 2s;
+  text-align: center;
+  line-height: 58px;
 }
-
-.bin:hover::after{
-  /* transition:all 2s; */
-    content: " Delete?"
-  }
-  .tick:hover::after{
-    /* transition:all 2s; */
-    content: " Sure?"
-  }
+.delete{
+  display: flex;
+  position: relative;
+}
+.sure{
+  display: flex;
+  position: relative;
+}
+.text{
+  top:-16px;
+  left:60px;
+  position: absolute;
+  width: 50px;
+  height: 58px;
+}
+.delete:hover > .text {
+  opacity: 1;
+  width: 200px;
+  background-color: #F34541;
+}
+ .sure:hover > .text{
+  opacity: 1;
+  width: 200px;
+  background-color: #38BA7D;
+}
+.tri{
+  width: 10px;
+  height: 10px;
+  background-color: #1C242B;
+  position: absolute;
+  top: 24px;
+  transition: 2s;
+left: 55px;
+transform: rotate(45deg);
+}
