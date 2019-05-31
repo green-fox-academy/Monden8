@@ -36,9 +36,7 @@ firstList.addEventListener(('change'), () => {
 });
 
 function show_selected() {
-    let selector = document.getElementById('myOtherList');
-    let value = selector[selector.selectedIndex].value;
-    document.querySelector('p').innerHTML = `The selected movie is: ${value}`;
+    document.querySelector('p').innerHTML = `The selected movie is: ${secondList[secondList.selectedIndex].value}`;
 };
 
 secondList.addEventListener('change', show_selected);;
