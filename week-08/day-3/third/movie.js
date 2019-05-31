@@ -9,6 +9,14 @@ let movies = {
     comedy: ["Airplane!", "Deadpool", "Wayne's World"]
 };
 
+function add_selected() {
+    let optional = document.createElement('option');
+    optional.setAttribute('disabled', 'true');
+    optional.setAttribute('selected', 'true');
+    optional.innerHTML = "Select your movie";
+    secondList.appendChild(optional)
+};
+
 firstList.addEventListener(('change'), () => {
     while (secondList.childElementCount > 0) {
         secondList.removeChild(secondList.lastElementChild)
@@ -16,11 +24,7 @@ firstList.addEventListener(('change'), () => {
     }
     for (let i = 0; i < types.length; i++) {
         if (firstList.value == types[i]) {
-            let optional = document.createElement('option');
-            optional.setAttribute('disabled', 'true');
-            optional.setAttribute('selected', 'true');
-            optional.innerHTML = "Select your movie";
-            secondList.appendChild(optional)
+            add_selected()
             for (let j = 0; j < movies[Object.keys(movies)[i]].length; j++) { //MAGIC NUMBER
                 let movie = document.createElement('option');
                 movie.setAttribute('value', `${movies[types[i]][j]}`);
@@ -30,7 +34,6 @@ firstList.addEventListener(('change'), () => {
         }
     }
 });
-
 
 function show_selected() {
     let selector = document.getElementById('myOtherList');
