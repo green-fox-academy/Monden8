@@ -22,11 +22,3 @@ div{
     flex-grow: 1;
     background-color:purple;
 }
-/* if .yellow width < XXXpx; => {
-    body.{
-        flex-direction: column;
-    }
-    .yellow{
-        flex-grow: 1;
-    }
-} */
