@@ -100,7 +100,7 @@ app.delete('/posts/:id', (req, res) => {
 
 //variables
 let doesUPcontain;
-let contain = function (upID) {
+let containUp = function (upID) {
     (con.query(`SELECT up_posts FROM Logged_User`, (err, rows) => {
         if (err) {
             console.log(err.toString());
@@ -110,6 +110,7 @@ let contain = function (upID) {
     }));
 };
 let doesDOWNcontain;
+let containDown = function (upID) {
 (con.query(`SELECT down_posts FROM Logged_User`, (err, rows) => {
     if (err) {
         console.log(err.toString());
@@ -117,6 +118,7 @@ let doesDOWNcontain;
         return;
     } doesDOWNcontain = rows;
 }));
+};
 let postDOTid;
 (con.query(`SELECT id FROM Reddit_Backend`, (err, rows) => {
     if (err) {
