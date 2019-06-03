@@ -1,33 +1,18 @@
 'use strict';
 
-// let myProm = new Promise(
-//     setTimeout(() => {
-//         return fullfill
-//     }, 300)
-//         (fullfill, reject), {
-//         fullfill = 'FULFILLED!'
-//     }
-// );
-
-// myProm.then((data) => {
-//     console.log(data);
-// })
-
-
 let mypromise = new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve({
-            fulfill: 'FULFILLED!'
-        })
+        reject(new Error(
+            'REJECTED!'
+        ));
     }, 300);
-    // reject({
-    //     fulfill: 'nom'
-    // });
 });
+
+function onReject(error) {
+    console.log(error.message)
+};
+
 mypromise
-    .then(kutyafüle => {
-        console.log(kutyafüle.fulfill)
-    })
-    // .catch(macskanyelve => {
-    //     console.log(macskanyelve.fulfill)
-    // });
+    .then(undefined, function(error) {
+        onReject(error)
+    });
