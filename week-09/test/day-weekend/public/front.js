@@ -18,14 +18,16 @@ document.querySelector('button').addEventListener('click', (event) => {
     XML.setRequestHeader('Content-Type', 'application/json');
     XML.onload = (data) => {
       let feedback = document.querySelector('p');
+      let responseData = JSON.parse(data.srcElement.response)
       if (data.srcElement.status == 405) {
         feedback.style.color = 'red';
-        feedback.innerHTML = data.srcElement.response;
+        feedback.innerHTML = responseData.message;
       } else {
         document.querySelectorAll('input')[0].value = '';
         document.querySelectorAll('input')[1].value = '';
         feedback.style.color = 'black';
-        feedback.innerHTML = data.srcElement.response;
+        feedback.innerHTML = responseData.message;
+        console.log(responseData.sendedRows);
       }
     };
     XML.send(JSON.stringify(getFormData()));
