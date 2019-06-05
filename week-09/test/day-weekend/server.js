@@ -28,7 +28,9 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname+'/public/index.html')
   });
 
-// app.post()
+app.post('/api/links',(req,res)=>{
+    console.log(req.body);
+});
 
 
 
