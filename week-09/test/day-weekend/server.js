@@ -7,6 +7,8 @@ const eskweel = require('mysql');
 const path = require('path');
 require('dotenv').config();
 
+app.use('/public',exp.static('public'));
+app.use(exp.json());
 
 const conn = eskweel.createConnection({
     host: process.env.DB_HOST,
@@ -23,8 +25,10 @@ conn.connect(err => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname+'/index.html')
+    res.sendFile(__dirname+'/public/index.html')
   });
+
+// app.post()
 
 
 
