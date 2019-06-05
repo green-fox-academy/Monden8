@@ -36,8 +36,7 @@ app.post('/api/links', (req, res) => {
             if (err) {
                 console.error(err);
             } else if (rows.length > 0) {
-                // alias is already taken WRITE IT OUT Your alias is already in use! //red
-                res.status(405).send();
+                res.status(405).send('Your alias is already in use!');
             } else {
                 // create one
                 let secretCode = generateSecretCode();
@@ -56,7 +55,9 @@ app.post('/api/links', (req, res) => {
                                     if (err) {
                                         console.error(err);
                                     } else {
-                                        res.status(200).send(rows[0]);
+                                        let aliasW = rows[0].alias;
+                                        let secretCodeW = rows[0].secret_code;
+                                        res.status(200).send(`Your URL is aliased to ${aliasW} and your secret code is ${secretCodeW}.`);
                                     }
                                 },
                             );
