@@ -13,5 +13,5 @@ document.querySelector('button').addEventListener('click',(event)=>{
 event.preventDefault();
 XML.open('POST','/api/links',true);
 XML.setRequestHeader('Content-Type', 'application/json');
-XML.send(JSON.stringify(getFormData()));
+XML.send(JSON.stringify(getFormData())); //:ERR_EMPTY_RESPONSE
 });
