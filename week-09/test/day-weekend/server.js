@@ -61,7 +61,6 @@ app.post('/api/links', (req, res) => {
                                             sendedRows: rows[0]
                                         }
                                         res.status(200).send(responseObject);
-
                                     }
                                 },
                             );
@@ -83,18 +82,31 @@ WHERE alias = ?`,
             let hitCount = rows[0].hit_count + 1;
             if (rows[0].alias.length == '') {
                 res.status(404).send(err);
-            } else {
-                conn.query(`UPDATE URL_Aliasing 
+                return;
+            }
+            conn.query(`UPDATE URL_Aliasing 
                 SET hit_count = ? 
                 WHERE alias = ?`, [hitCount, rows[0].alias], (err1, rows) => {
                     if (err1) {
                         res.status(418).send(err1);
-                    } else{
-                        res.status(200).redirect(uerel);
+                        return;
                     }
+                    res.status(200).redirect(uerel);
                 })
+        }
+    )
+});
+//-----------------------------------------------
+app.get('/api/links', (req, res) => {
+    conn.query(
+        `SELECT id, url, alias, hit_count
+        FROM URL_Aliasing;`, (err2, rows) => {
+            if (err2) {
+                res.status(418).send(err2);
+                return;
             }
-        })
+            res.status(200).json(rows);
+        });
 });
 //-----------------------------------------------
 function generateSecretCode() {
