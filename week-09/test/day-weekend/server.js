@@ -109,6 +109,31 @@ app.get('/api/links', (req, res) => {
         });
 });
 //-----------------------------------------------
+app.delete('/api/links/:id', (req, res) => {
+    conn.query(`SELECT id, secret_code
+    FROM URL_Aliasing 
+    WHERE id = ?`, [req.params.id], (err3, rows) => {
+            if (rows.length == 0) {
+                res.status(404).send('no item with such id');
+                return;
+            } else if (err3) {
+                res.status(400).send(err3)
+            } else if (req.body.secretCode == rows[0].secret_code) {
+                conn.query(`DELETE FROM URL_Aliasing 
+                WHERE id = ?`, [req.params.id], (err4, rows) => {
+                        if (err4) {
+                            res.status(400).send();
+                            return;
+                        }
+                        res.status(204).send('deleted');
+                    });
+            } else {
+                res.status(403).send('doesnt match');
+                return;
+            }
+        });
+});
+//-----------------------------------------------
 function generateSecretCode() {
     return `${getARandomNumber(1, 9)}${getARandomNumber(0, 9)}${getARandomNumber(0, 9)}${getARandomNumber(0, 9)}`;
 }
