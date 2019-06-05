@@ -58,7 +58,7 @@ app.post('/api/links', (req, res) => {
                                         let secretCodeW = rows[0].secret_code;
                                         let responseObject = {
                                             message: `Your URL is aliased to <strong>${aliasW}</strong> and your secret code is <strong>${secretCodeW}</strong>.`,
-                                            sendedRows : rows[0]    
+                                            sendedRows: rows[0]
                                         }
                                         res.status(200).send(responseObject);
 
@@ -71,6 +71,30 @@ app.post('/api/links', (req, res) => {
             }
         },
     );
+});
+//-----------------------------------------------
+app.get('/a/:alias', (req, res) => {
+    conn.query(`
+SELECT *
+FROM URL_Aliasing 
+WHERE alias = ?`,
+        [req.params.alias], (err, rows) => {
+            let uerel = rows[0].url;
+            let hitCount = rows[0].hit_count + 1;
+            if (rows[0].alias.length == '') {
+                res.status(404).send(err);
+            } else {
+                conn.query(`UPDATE URL_Aliasing 
+                SET hit_count = ? 
+                WHERE alias = ?`, [hitCount, rows[0].alias], (err1, rows) => {
+                    if (err1) {
+                        res.status(418).send(err1);
+                    } else{
+                        res.status(200).redirect(uerel);
+                    }
+                })
+            }
+        })
 });
 //-----------------------------------------------
 function generateSecretCode() {
