@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="public/basic.css">
 </head>
 <body>
-    <div class="feedback"></div>
     <form action="POST">
+        <h3 class="feedback"></h3>
         <label for="url">URL</label>
-        <input type="text" id="url">
+        <input type="text" id="url" required>
         <label for="alias">Alias</label>
-        <input type="text" id="alias">
+        <input type="text" id="alias" required>
         <button type="submit">Submit</button>
     </form>
     <script src="public/front.js"></script>
