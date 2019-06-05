@@ -70,7 +70,7 @@ app.post('/api/links', (req, res) => {
 });
 //-----------------------------------------------
 function generateSecretCode() {
-    return `${getARandomNumber(0, 9)}${getARandomNumber(0, 9)}${getARandomNumber(0, 9)}${getARandomNumber(0, 9)}`;
+    return `${getARandomNumber(1, 9)}${getARandomNumber(0, 9)}${getARandomNumber(0, 9)}${getARandomNumber(0, 9)}`;
 }
 
 function getARandomNumber(min, max) {
