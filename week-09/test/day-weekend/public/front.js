@@ -14,13 +14,16 @@ document.querySelector('button').addEventListener('click', (event) => {
   XML.open('POST', '/api/links', true);
   XML.setRequestHeader('Content-Type', 'application/json');
   XML.onload = (data) => {
-    let feedback = document.querySelector('h3');
+    let feedback = document.querySelector('p');
     if (data.srcElement.status == 405) {
       feedback.style.color = 'red';
-      feedback.innerHTML=data.srcElement.response;
+      feedback.innerHTML = data.srcElement.response;
     } else {
-      feedback.innerHTML=data.srcElement.response;
+      document.querySelectorAll('input')[0].value = '';
+      document.querySelectorAll('input')[1].value = '';
+      feedback.style.color = 'black';
+      feedback.innerHTML = data.srcElement.response;
     }
   };
-  XML.send(JSON.stringify(getFormData())); //:ERR_EMPTY_RESPONSE
+  XML.send(JSON.stringify(getFormData()));
 });

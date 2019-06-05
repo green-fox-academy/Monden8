@@ -47,7 +47,6 @@ app.post('/api/links', (req, res) => {
                         if (err) {
                             console.error(err);
                         } else {
-                            // read back and WRITE OUT "Your URL is aliased to {alias} and your secret code is {secretCode}.""
                             conn.query(
                                 'SELECT * FROM URL_Aliasing WHERE alias = ?',
                                 [alias || ''],
@@ -57,7 +56,8 @@ app.post('/api/links', (req, res) => {
                                     } else {
                                         let aliasW = rows[0].alias;
                                         let secretCodeW = rows[0].secret_code;
-                                        res.status(200).send(`Your URL is aliased to ${aliasW} and your secret code is ${secretCodeW}.`);
+                                        res.status(200).send(`Your URL is aliased to <strong>${aliasW}</strong> and your secret code is <strong>${secretCodeW}</strong>.`);
+
                                     }
                                 },
                             );
