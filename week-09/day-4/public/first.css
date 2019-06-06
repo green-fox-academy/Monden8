@@ -1,4 +1,6 @@
 body {
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -8,7 +10,21 @@ body {
 .header {
   display: flex;
 }
+button{
+  margin: 1px;
+  background-color: white;;
+  border: 5px solid black;
+}
 .game {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+button{
+  width: 200px;
+  height: 50px;
+}
+.false:focus{
+  background-color:red; 
 }
