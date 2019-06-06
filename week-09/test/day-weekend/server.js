@@ -79,14 +79,13 @@ FROM URL_Aliasing
 WHERE alias = ?`,
         [req.params.alias], (err, rows) => {
             let uerel = rows[0].url;
-            let hitCount = rows[0].hit_count + 1;
             if (rows[0].alias.length == '') {
                 res.status(404).send(err);
                 return;
             }
             conn.query(`UPDATE URL_Aliasing 
                 SET hit_count = ? 
-                WHERE alias = ?`, [hitCount, rows[0].alias], (err1, rows) => {
+                WHERE alias = ?`, [rows[0].hit_count + 1, rows[0].alias], (err1, rows) => {
                     if (err1) {
                         res.status(418).send(err1);
                         return;
@@ -122,7 +121,7 @@ app.delete('/api/links/:id', (req, res) => {
                 conn.query(`DELETE FROM URL_Aliasing 
                 WHERE id = ?`, [req.params.id], (err4, rows) => {
                         if (err4) {
-                            res.status(400).send();
+                            res.status(500).send();
                             return;
                         }
                         res.status(204).send('deleted');
