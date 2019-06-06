@@ -27,6 +27,20 @@ conn.connect(err => {
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/game.html')
 });
-app.listen(PORT,()=>{
+
+app.get('/game', (req, res) => {
+    conn.query(`
+    SELECT * FROM  questions
+        INNER JOIN answer
+        ON questions.id = answer.id`, (err, rows) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            let quiz = rows[Math.floor(Math.random() * 5)];
+            res.json(quiz)
+        });
+})
+app.listen(PORT, () => {
     console.log('Server is up and running ✨');
 });
