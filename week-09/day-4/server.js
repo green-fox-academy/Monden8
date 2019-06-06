@@ -27,3 +27,6 @@ conn.connect(err => {
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/game.html')
 });
+app.listen(PORT,()=>{
+    console.log('Server is up and running ✨');
+});
